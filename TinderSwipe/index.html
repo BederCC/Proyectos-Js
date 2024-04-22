@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <main>
+        <section>
+            <header>
+                <img src="tinder-logo.webp" alt="Tinder logo">
+            </header>
+
+
+            <div class="cards">
+                <article>
+                    <img src="/TinderSwipe/fotos/1.webp" alt="Face 1">
+                    <h2>
+                        Juana <span>33</span>
+                    </h2>
+                    <div class="choise nope"></div>
+                    <div class="choise like"></div>
+                </article>
+
+                <article>
+                    <img src="/TinderSwipe/fotos/2.webp" alt="Face 2">
+                    <h2>
+                        Alex <span>34</span>
+                    </h2>
+                    <div class="choise nope"></div>
+                    <div class="choise like"></div>
+                </article>
+            </div>
+
+
+            <footer>
+                <button class="is-undo" aria-label="undo"></button>
+                <button class="is-remove is-big" aria-label="remove"></button>
+                <button class="is-star" aria-label="star"></button>
+                <button class="is-fav is-big" aria-label="fav"></button>
+                <button class="is- zap" aria-label="zap"></button>
+            </footer>
+        </section>
+    </main>
+
+    <style>
+        *, *::before, *::after{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            overflow: hidden;
+            user-select: none;
+            background: #222;
+        }
+
+        main{
+            background: url(/TinderSwipe/iphone.webp);
+            background-size: contain;
+            width: 320px;
+            height: 640px;
+            filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.3));
+        }
+
+        section{
+            background: #f6f6f6;
+            width: 270px;
+            height: 590px;
+            border-radius: 32px;
+            display: flex;
+            gap: 24px;
+            flex-direction: column;
+            overflow: relative;
+            padding: 16px 6px;
+            margin: 24px;
+        }
+
+        header{
+            display: flex;
+            justify-content: center;
+            > img{
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+        footer{
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            padding: 0 20px;
+            justify-content: center;
+            align-items: center;
+        
+        & button{
+                background: url(/TinderSwipe/tinder-icons.webp) no-repeat;
+                background-position: 0px 0px;
+                background-size: 220px;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                border: 1px solid #ccc;
+                border: 0;
+                cursor: pointer;
+                transition: scale 0.3s ease;
+
+                &:hover{
+                    transform: scale(1.4);
+                }
+
+                &.is-big{
+                    background-size: 250px;
+                    width: 48px;
+                    height: 48px;
+                }
+
+                &.is-undo{
+                    background-position: -175px 0px;
+                }
+
+                &.is-remove{
+                    background-position: -150px 0px;
+                }
+
+                &.is-star{
+                    background-position: -90px 0px;
+                }
+
+                &.is-fav{
+                    background-position: -50px 0px;
+                }
+
+                &.is-zap{
+                    background-position: 0px 0px;
+                }
+            }
+}
+        
+        .cards{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+
+            > article{
+                background: black;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                cursor: grab;
+                border-radius: 8px;
+                overflow: hidden;
+                position: absolute;
+                inset: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 2;
+                will-change: transform rotate;
+
+                > img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                > h2{
+                    color: #fff;
+                    position: absolute;
+                    inset: 0;
+                    display: flex;
+                    align-items: flex-end;
+                    height: 100%;
+                    width: 100%;
+                    padding: 16px;
+                    z-index: 3;
+                    background: lienar-gradient(0deg, #86000088 20%, transparent 40%);
+
+                    > span{
+                        margin-left: 8px;
+                        font-size: 18px;
+                        line-height: 1.4;
+                        font-weight: 400;
+                    }
+                }
+            }
+        }
+    </style>
+
+    <script>
+        
+    </script>
+</body>
+</html>
